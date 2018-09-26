@@ -1,3 +1,6 @@
+from fractions import gcd
+from functools import reduce
+
 # Project Euler 1-10
 
 print 'Project Euler: #1 - 10'
@@ -61,3 +64,23 @@ def four(min, max):
     return palindrome
 
 print 'Problem 4:', four(100,999)
+
+# Problem 5
+# 2520 is the smallest number than can be divided by each of the numbers
+# from 1 to 10 wthout any remainder.
+# What is the smallest positive number that is evenly divisble by all of the
+# numbers from 1 to 20?
+
+def five(max):
+    num = max
+    div = False
+    while not div:
+        for x in range(1, max+1):
+            if num % x != 0:
+                num += 1
+                break
+            if x == max:
+                div = True
+    return num
+
+print 'Problem 5:', five(20)
