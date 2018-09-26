@@ -45,3 +45,19 @@ def three(num):
     return fac
 
 print 'Problem 3:', three(600851475143)
+
+# Problem 4
+# A palindromic number reads the same both ways. The largest
+# palindrome made from the product of two 2 digit numbers is 9009 = 91 x 99.
+# Find the largest palindrome made from the product of two 3 digit numbers.
+
+def four(min, max):
+    palindrome = 0
+    for x in range(min, max + 1):
+        for y in range(x + 1, max + 1):
+            xy = x * y
+            if xy > palindrome and (str(xy) == str(xy)[::-1]):
+                palindrome = xy
+    return palindrome
+
+print 'Problem 4:', four(100,999)
